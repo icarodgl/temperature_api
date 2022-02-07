@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/home/icaro/Documentos/Adotei-back/__tests__/transaction.spec.ts">
+    <testCase name="CRUD transaction login first" duration="673"/>
+    <testCase name="CRUD transaction create transaction" duration="66"/>
+    <testCase name="CRUD transaction get the transaction" duration="50"/>
+    <testCase name="CRUD transaction update transaction" duration="90"/>
+    <testCase name="CRUD transaction delete transaction" duration="88"/>
+  </file>
+  <file path="/home/icaro/Documentos/Adotei-back/__tests__/user.spec.ts">
+    <testCase name="CRUD user create user error já existe" duration="584"/>
+  </file>
+  <file path="/home/icaro/Documentos/Adotei-back/__tests__/institution.spec.ts">
+    <testCase name="CRUD institution login first" duration="608"/>
+    <testCase name="CRUD institution create institution" duration="105"/>
+    <testCase name="CRUD institution get the institution" duration="46"/>
+    <testCase name="CRUD institution update institution" duration="126"/>
+    <testCase name="CRUD institution delete institution" duration="88"/>
+  </file>
+  <file path="/home/icaro/Documentos/Adotei-back/__tests__/pet.spec.ts">
+    <testCase name="CRUD pet login first" duration="609"/>
+    <testCase name="CRUD pet create pet" duration="67"/>
+    <testCase name="CRUD pet get the pet" duration="44"/>
+    <testCase name="CRUD pet delete pet" duration="81"/>
+  </file>
+</testExecutions>
