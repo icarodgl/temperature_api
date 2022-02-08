@@ -37,8 +37,8 @@
     "sonarqube-scanner": "^2.7.0",
     "supertest": "^4.0.2",
     "ts-jest": "^25.2.1",
-    "ts-node-dev": "^1.0.0-pre.63",
-    "typescript": "^3.8.3"
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^3.9.10"
   },
   "dependencies": {
     "@types/bcryptjs": "^2.4.2",
@@ -54,11 +54,11 @@
     "inversify": "^5.0.1",
     "inversify-express-utils": "^6.3.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.4",
+    "mongoose": "^5.13.14",
     "reflect-metadata": "^0.1.13",
     "swagger-express-typescript": "^1.0.2",
     "swagger-jsdoc": "^4.2.0",
     "swagger-ui-dist": "^3.35.0",
-    "swagger-ui-express": "^4.1.4"
+    "swagger-ui-express": "^4.3.0"
   }
 }

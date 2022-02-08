@@ -80,6 +80,6 @@ router.post('/auth/change-password', [checkJwt], authController.changePassword);
 router.post('/auth/new', authController.newUser);
 
 router.get('/auth/list', authController.getAll);
-router.delete('/auth/:id', authController.delete);
+// router.delete('/auth/:id', authController.delete);
 
 export default router;

@@ -12,11 +12,11 @@ const {
 } = process.env;
 
 const isTesting = NODE_ENV === 'test';
-const dbName = isTesting ? 'test' : 'adoteitest';
+const dbName = isTesting ? 'test' : 'myFirstDatabase';
 
 const connectDb = () => {
   mongoose.connect(
-    `mongodb+srv://${dbUser}:${dbPass}@cluster0-ilwwj.gcp.mongodb.net/${dbName}?retryWrites=true&w=majority`,
+    `mongodb+srv://${dbUser}:${dbPass}@temperatura.ilwwj.mongodb.net/${dbName}?retryWrites=true&w=majority`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,

@@ -1,5 +1,6 @@
-import { Schema, model, Document } from 'mongoose';
+import { Schema, model, Document, ObjectId } from 'mongoose';
 export interface IAuthModel extends Document {
+  _id:ObjectId;
   username: string;
   password: string;
   role: number;

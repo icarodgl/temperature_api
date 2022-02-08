@@ -56,13 +56,13 @@ export abstract class BaseController<
       res.status(400).json(error);
     }
   };
-  delete = async (req: Request, res: Response) => {
-    try {
-      const id = req.params.id;
-      const reg = await this.service.delete(id);
-      res.json(reg);
-    } catch (error) {
-      res.status(400).json(error);
-    }
-  };
+  // delete = async (req: Request, res: Response) => {
+  //   try {
+  //     const id = req.params.id;
+  //     const reg = await this.service.delete(id);
+  //     res.json(reg);
+  //   } catch (error) {
+  //     res.status(400).json(error);
+  //   }
+  // };
 }

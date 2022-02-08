@@ -1,5 +1,5 @@
 import { IBaseModel } from '../models';
-import { Model } from 'mongoose';
+import { Model, ObjectId } from 'mongoose';
 export abstract class BaseService<A extends IBaseModel> {
   constructor(protected BaseModel: Model<A>) {}
   async getAll() {
@@ -25,17 +25,17 @@ export abstract class BaseService<A extends IBaseModel> {
       throw { message: error };
     }
   }
-  async delete(id: string) {
-    try {
-      const reg = await this.BaseModel.findOneAndDelete({ _id: id }).exec();
-      if (reg) {
-        return reg;
-      }
-      throw { message: 'Objeto não encontrado' };
-    } catch (error) {
-      throw { message: error };
-    }
-  }
+  // async delete(id: ObjectId) {
+  //   try {
+  //     const reg = await this.BaseModel.findOneAndDelete({ _id:id }).exec();
+  //     if (reg) {
+  //       return reg;
+  //     }
+  //     throw { message: 'Objeto não encontrado' };
+  //   } catch (error) {
+  //     throw { message: error };
+  //   }
+  // }
   async update(id: string, model: Object) {
     try {
       const reg = await this.BaseModel.findById(id);
