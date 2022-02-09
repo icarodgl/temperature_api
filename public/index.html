@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Temperatura de Casa</title>
     <style>
       .corpo{
@@ -33,9 +34,9 @@
 
     dados = await dados.json()
 
-    let labels = dados.map(x => {return x.data} )
+    let labels = dados.map(x => {return new Date(x.data).toLocaleString() } )
 
-    let temperatura = dados.map(x => {return x.temperatura1})
+    let temperatura = dados.map(x => {return  x.temperatura1 })
     let temperatura2 = dados.map(x => {return x.temperatura2})
     
     const ctx = document.getElementById('myChart').getContext('2d');
@@ -59,6 +60,7 @@
             {
                 label: '# Temperatura 2',
                 data: temperatura2,
+                
                 backgroundColor: [
                     'rgba(255, 138, 4, 0.5)',
                 ],
@@ -69,11 +71,15 @@
             }]
         },
         options: {
-            scales: {
-                y: {
-                    beginAtZero: false
-                }
-            }
+            plugins:{align:"center",color:'red',display:true,text:"aaaaaaa "},
+            scales:{parsing: false},
+            layout:{autoPadding:true},
+            interaction: {
+            // Overrides the global setting
+            mode: 'index'
+        },
+        scales: {
+        }
         }
     });
     }
