@@ -14,8 +14,16 @@
 
   </head>
   <body>
-    <div id="tc"> <canvas id="temperatura"></canvas></div>
-    <div id="hc"> <canvas id="humidade"></canvas></div>
+    <div>
+      <input type="date" name="inputInicio" id="inputInicio">
+      <input type="date" name="inputFim" id="inputFim">
+      <button onclick="updateFiltro(inputInicio.value,inputFim.value)">Filtrar</button>
+    </div>
+    <div>
+      <div id="tc"> <canvas id="temperatura"></canvas></div>
+      <div id="hc"> <canvas id="humidade"></canvas></div>
+    </div>
+
   </body>
   <script
   type="text/javascript"
