@@ -77,10 +77,9 @@ async function getDados() {
     return dados
 }
 async function createChart(chart,dados) {
-    chart.clear()
+    //chart.clear()
     chart.data.labels = dados.labels
     chart.data.datasets.forEach(dataset => {
-        console.log("DATASET", dataset);
         dataset.data = dados.dados
     });
     chart.update()
@@ -92,22 +91,20 @@ function filtraDados(dados, tipo, inicio, fim) {
         "dados": [],
         "labels": []
     }
-    if (inicio !== "" && fim !== "") {
-        inicio = new Date(inicio)
-        fim = new Date(fim)
-        
+    if ( inicio !== "" && fim !== "") {
+        inicio = moment.parseZone(inicio) //new Date(inicio)   
+        fim = moment.parseZone(fim) //new Date(fim)
         dados.forEach(x => {
-            let data = new Date(x.data)
-            if (inicio.getTime() < data.getTime() <= fim.getTime()) {
-                console.log("true");
-                resp.labels.push(data.toLocaleString())
+            let data =moment.parseZone(x.data)
+            if (inicio < (data) && (data) <= fim) {
+                resp.labels.push(data.format("H")+'H')
                 resp.dados.push(x[tipo])
             }
         })
     } else {
         dados.forEach(x => {
-            let data = new Date(x.data).toLocaleString()
-            resp.labels.push(data)
+            let data = moment(x.data).format("DD/M-H")
+            resp.labels.push(data+'H')
             resp.dados.push(x[tipo])
         })
     }
@@ -115,7 +112,7 @@ function filtraDados(dados, tipo, inicio, fim) {
     return resp
 }
 
-function updateFiltro(inicio = new Date(), fim = new Date()) {
+function updateFiltro(inicio = "", fim = "") {
     let temp = filtraDados(DADOS, TIPO.temperatura, inicio, fim)
     let humi = filtraDados(DADOS, TIPO.humidade, inicio, fim)
     createChart(chartTemperatura,temp)
